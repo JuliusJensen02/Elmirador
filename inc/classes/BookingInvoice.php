@@ -9,11 +9,11 @@ class BookingInvoice extends Invoice {
         $this->booking = $booking;
         $this->path = "/booking-faktura";
         if($booking->getStatus() == "Owner Confirmed"){
-            $this->html = file_get_contents(INC_DIR."/invoice/templates/fakturaSkabelonOwner.php");
+            $this->html = file_get_contents(INC_DIR."/invoice/templates/invoice-template-owner.php");
             $this->bookingInvoice();
         }
         else{
-            $this->html = file_get_contents(INC_DIR."/invoice/templates/fakturaSkabelon.php");
+            $this->html = file_get_contents(INC_DIR."/invoice/templates/invoice-template.php");
             $this->regularInvoice();
         }
 

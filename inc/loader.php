@@ -23,7 +23,7 @@ require_once INC_DIR . '/classes/BookingOrder.php';
  */
 
 require_once INC_DIR . '/shortcodes/apartment-archive.php';
-require_once INC_DIR . '/shortcodes/bolig-arkiv-advanced-price.php';
+require_once INC_DIR . '/shortcodes/advanced-price-apt-card.php';
 require_once INC_DIR . '/shortcodes/booking-table.php';
 require_once INC_DIR . '/shortcodes/filters-link.php';
 require_once INC_DIR . '/shortcodes/icon-list.php';
