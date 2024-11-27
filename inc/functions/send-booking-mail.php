@@ -1,4 +1,8 @@
 <?php
+
+use classes\BookingMail;
+use classes\BookingOrder;
+
 add_action( 'jet-form-builder/custom-action/send-booking-mail', function( $request) {
 	update_post_meta($request["inserted_post_id"], "status", "Reservation Created");
 	$booking = new BookingOrder(intval($request["inserted_post_id"]));
