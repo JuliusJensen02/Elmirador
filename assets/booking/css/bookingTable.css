@@ -1,0 +1,51 @@
+.apartmentTable{
+    display: grid;
+    grid-template-columns: 60px 2fr 1fr 1fr 1fr 1fr;
+    overflow-x: scroll;
+}
+
+.apartmentTable.multiple{
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #747474;
+}
+
+.apartmentTable>div{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.apartmentTable .headerElm{
+    color: #1A242F;
+    font-family: "Nunito";
+    font-size: 15px;
+    font-weight: 600;
+    height: 60px;
+}
+
+.apartmentTable .bodyElm{
+    color: #747474;
+    font-family: "Nunito";
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.apartmentTable .bodyElm.odd{
+    background-color: #F6F6F6;
+}
+
+.apartmentTable .footerElm{
+    background-color: #1A242F;
+    color: white;
+    font-family: "Nunito";
+    font-size: 14px;
+    font-weight: 600;
+    grid-column: span 6;
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+}

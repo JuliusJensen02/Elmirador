@@ -1,0 +1,120 @@
+/*Popup*/
+.seasonPopup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.seasonPopup.active{
+    display: flex;
+}
+
+.seasonPopup .popup-content {
+    position: relative;
+    max-width: 450px;
+    width: 95%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.seasonPopup .popup-content button{
+    border: none;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    aspect-ratio: 1;
+}
+
+.seasonPopup .popup-content button svg{
+    width: 15px;
+    height: 15px;
+}
+
+.seasonPopup .popup-content .season, .seasonPopup .popup-content .discount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: #E8E8E8 1px solid;
+}
+
+.seasonPopup .popup-content .season:nth-child(odd){
+    background-color: #F7F7F7;
+}
+
+.seasonPopup .popup-content .season p, .seasonPopup .popup-content .discount p{
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A242F;
+    margin: 0;
+}
+
+.seasonPopup .popup-content .discount p{
+    color: white;
+}
+
+.seasonPopup .popup-content .season:nth-child(2){
+    border-top: #E8E8E8 1px solid;
+}
+
+.seasonPopup .popup-content .season:nth-child(7){
+    border-bottom: none;
+}
+
+.seasonPopup .popup-content .discount{
+    border-top: white 1px solid;
+    border-bottom: none;
+    background-color: #D59F54;
+}
+
+.seasonPopup .popup-content .discount:nth-child(8){
+    background-color: #D59F54E6;
+}
+
+
+.seasonPopup .popup-content h2{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.seasonPopup .popup-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.openSeasonPopup{
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: none !important;
+    color: #747474 !important;
+    font-family: "Nunito", Sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    text-decoration: underline !important;
+    cursor: pointer !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 767px) {
+    .seasonPopup .popup-content .season, .seasonPopup .popup-content .discount{
+        padding: 15px 30px;
+    }
+}

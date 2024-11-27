@@ -1,0 +1,45 @@
+#ordersTable, #completedOrdersTable{
+    display: grid;
+    grid-template-columns: 60px 2fr 1fr 1fr 1fr 1fr;
+}
+
+#ordersTable>div, #completedOrdersTable>div{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#ordersTable .headerElm, #completedOrdersTable .headerElm{
+    color: #1A242F;
+    font-family: "Nunito";
+    font-size: 15px;
+    font-weight: 600;
+    height: 60px;
+}
+
+#ordersTable .bodyElm, #completedOrdersTable .bodyElm{
+    color: #747474;
+    font-family: "Nunito";
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#ordersTable .bodyElm.odd, #completedOrdersTable .bodyElm.odd{
+    background-color: #F6F6F6;
+}
+
+#ordersTable .image, #completedOrdersTable .image{
+    padding: 5px;
+}
+
+#ordersTable .footerElm, #completedOrdersTable .footerElm{
+    background-color: #1A242F;
+    color: white;
+    font-family: "Nunito";
+    font-size: 14px;
+    font-weight: 600;
+    grid-column: span 6;
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+}

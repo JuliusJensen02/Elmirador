@@ -1,0 +1,798 @@
+#archive{
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+
+
+/*Listing*/
+#archive #apartsments{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+    width: calc(100% - 430px);
+    gap: 25px;
+    height: fit-content;
+}
+
+#archive #apartsments .gallery{
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 3/2;
+    border-radius: 12px;
+}
+
+#archive #apartsments .gallery .gallery-nav{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    display: flex;
+}
+
+#archive #apartsments .gallery .gallery-nav button{
+    background-color: #1A242F;
+    opacity: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+}
+
+#archive #apartsments .gallery:hover .gallery-nav button{
+    background-color: #1A242F4D;
+    opacity: 1;
+}
+
+#archive #apartsments .gallery .gallery-nav button:hover{
+    background-color: #1A242F99;
+    opacity: 1;
+}
+
+#archive #apartsments .gallery .gallery-nav button.prev{
+    border-radius: 4px 0 0 4px;
+}
+
+#archive #apartsments .gallery .gallery-nav button.next{
+    border-radius: 0 4px 4px 0;
+}
+
+#archive #apartsments .gallery .gallery-nav button.prev svg{
+    transform: rotate(270deg);
+}
+
+#archive #apartsments .gallery .gallery-nav button.next svg{
+    transform: rotate(90deg);
+}
+
+#archive #apartsments .gallery .gallery-nav button svg{
+    width: 30px;
+    height: 25px;
+}
+
+#archive #apartsments .gallery .gallery-nav button svg path{
+    fill: hsla(0,0%,93.3%,.9)
+}
+
+#archive #apartsments .gallery .gallery-slider{
+    display: flex;
+    position: absolute;
+    transition: 0.3s;
+}
+
+#archive #apartsments .gallery .gallery-slider div{
+    width: 100%;
+}
+
+#archive #apartsments .gallery .gallery-slider div img{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 3/2;
+}
+
+#archive #apartsments.loading{
+    opacity: 0.5;
+}
+
+#archive #apartsments h2{
+    line-height: 1;
+}
+
+#archive #apartsments h2 a{
+    color: var( --e-global-color-secondary );
+    font-family: "Nunito", Sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 10px 0 5px 0;
+}
+
+#archive #apartsments p{
+    color: #000;
+    font-family: "Nunito", Sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+#archive #apartsments p span{
+    white-space: nowrap;
+}
+
+#archive #apartsments>div>button{
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: #747474;
+    font-family: "Nunito", Sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#archive #apartsments .price{
+    font-size: 14px;
+    color: #747474;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 600;
+}
+
+#archive #apartsments .price span{
+    color: #1A242F;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Nunito", Sans-serif;
+}
+
+@media (max-width: 1024px){
+    #archive #apartsments .gallery .gallery-nav button{
+        background-color: #1A242F4D;
+        opacity: 1;
+    }
+    #archive{
+        gap: 20px;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1024px){
+    #archive{
+        margin-top: 100px;
+    }
+}
+
+/*Popup*/
+#archive #apartsments .popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#archive #apartsments .popup.active{
+    display: flex;
+}
+
+#archive #apartsments .popup-content {
+    position: relative;
+    max-width: 450px;
+    width: 95%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: white;
+    overflow: hidden;
+}
+
+#archive #apartsments .popup-content button{
+    border: none;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    aspect-ratio: 1;
+}
+
+#archive #apartsments .popup-content button svg{
+    width: 15px;
+    height: 15px;
+}
+
+#archive #apartsments .popup-content .season, #archive #apartsments .popup-content .discount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: #E8E8E8 1px solid;
+}
+
+#archive #apartsments .popup-content .season:nth-child(odd){
+    background-color: #F7F7F7;
+}
+
+#archive #apartsments .popup-content .season p, #archive #apartsments .popup-content .discount p{
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A242F;
+}
+
+#archive #apartsments .popup-content .discount p{
+    color: white;
+}
+
+#archive #apartsments .popup-content .season:nth-child(2){
+    border-top: #E8E8E8 1px solid;
+}
+
+#archive #apartsments .popup-content .season:nth-child(7){
+    border-bottom: none;
+}
+
+#archive #apartsments .popup-content .discount{
+    border-top: white 1px solid;
+    border-bottom: none;
+    background-color: #D59F54;
+}
+
+#archive #apartsments .popup-content .discount:nth-child(8){
+    background-color: #D59F54E6;
+}
+
+
+#archive #apartsments .popup-content h2{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+#archive .popup .popup-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+@media (max-width: 767px) {
+    #archive #apartsments .popup-content .season, #archive #apartsments .popup-content .discount{
+        padding: 15px 30px;
+    }
+}
+
+
+/*Sidebar*/
+
+#archive .infoBar{
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#archive .infoBar .bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #F6F6F6;
+    border-radius: 12px;
+    padding: 30px 40px;
+}
+
+#archive .infoBar .bar p{
+    margin: 0;
+    font-family: "Nunito", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A242F;
+    user-select: none;
+}
+
+#archive .infoBar .filters .bar{
+    display: none;
+}
+
+#archive .filters .content{
+    background-color: #F6F6F6;
+    padding: 30px 40px 40px 40px;
+    border-radius: 12px;
+}
+
+#archive .included{
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    gap: 0;
+}
+
+#archive .included.active{
+    gap: 20px;
+}
+
+#archive .included .content{
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: 0.3s;
+    background-color: #F6F6F6;
+    border-radius: 12px;
+    padding: 0 40px;
+    gap: 5px;
+}
+
+#archive .included.active .content{
+    max-height: 800px;
+    padding: 40px 40px;
+}
+
+#archive .included .content .row{
+    display: flex;
+    gap: 20px;
+}
+
+#archive .included .content .row svg{
+    width: 18px;
+    height: 18px;
+}
+
+#archive .included .content .row svg path{
+    fill: #D59F54;
+}
+
+#archive .infoBar .bar svg{
+    transition: 0.3s;
+    transform: rotate(-90deg);
+}
+
+#archive .included.active .bar svg, #archive .filters.active .bar svg{
+    transform: rotate(0);
+}
+
+
+@media (max-width: 900px){
+    #archive .infoBar .filters .bar{
+        display: flex;
+    }
+
+    #archive .filters{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #archive .filters .content{
+        display: flex;
+        flex-direction: column;
+        max-height: 0;
+        overflow-y: hidden;
+        transition: 0.3s;
+        background-color: #F6F6F6;
+        border-radius: 12px;
+        padding: 0 40px;
+        gap: 5px;
+    }
+
+    #archive .filters.active .content{
+        max-height: 1200px;
+        padding: 40px 40px;
+    }
+
+    #archive .filters .bar{
+        margin-bottom: -20px;
+    }
+
+    #archive .filters.active .bar{
+        margin-bottom: 0;
+    }
+}
+
+
+/*Calendar*/
+
+#archive .filters .filter.calendar{
+    display: flex;
+    flex-direction: column;
+}
+
+#archive .filters .filter.calendar .inputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#archive .filters .filter.calendar .inputs .input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+    color: #747474;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 600;
+    width: 100%;
+}
+
+#archive .filters .filter.calendar .inputs input{
+    border: none;
+    padding: 11px 18px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 6px;
+}
+
+#archive .filters .filter.calendar .disclaimer{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #747474;
+    font-family: "Nunito", Sans-serif;
+    font-style: italic;
+}
+
+#archive .filters .filter.calendar #clearDates{
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #D59F54;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+#archive .filters .filter.calendar #clearDates.active{
+    display: block;
+}
+
+#archive .filters .filter #clearFilters{
+    display: block;
+    font-size: 14px;
+    color: #D59F54;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+@media (max-width: 767px){
+    #archive #calendar{
+        position: fixed !important;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9;
+    }
+}
+
+
+
+
+
+
+
+#archive .filters #calendar{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #d8d8d8;
+    padding: 0 5px;
+}
+
+#archive .filters #calendar.active{
+    display: flex;
+}
+
+#archive .filters #calendar .calendar-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 12px 6px 12px;
+    font-size: 18px;
+}
+
+#archive .filters #calendar .calendar-controls #currentMonth{
+    text-transform: capitalize;
+}
+
+#archive .filters #calendar .calendar-controls button{
+    background: none;
+    padding: 0;
+    width: 20px;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    border: none;
+}
+
+#archive .filters #calendar .calendar-controls button svg{
+    width: 100%;
+    height: 100%;
+}
+
+#archive .filters #calendar .calendar-controls button#prevMonth{
+    transform: rotate(270deg);
+}
+
+#archive .filters #calendar .calendar-controls button#nextMonth{
+    transform: rotate(90deg);
+}
+
+#archive .filters #calendar #calendarDays{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+#archive .filters #calendar #calendarDays div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    transition: 0.3s;
+    color: #1A242F;
+    font-family: "Nunito", Sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: not-allowed;
+    user-select: none;
+    background-color: #57a0464d;
+}
+
+#archive .filters #calendar #calendarDays div:not(.disabled, .weekDay){
+    cursor: pointer;
+}
+
+#archive #calendar #calendarDays div.disabled, #archive #calendar #calendarDays div.weekDay{
+    background: none;
+}
+
+#archive #calendar #calendarDays div.disabled:not(.initial){
+    color: #fff;
+    background-color: #dd46224d;
+}
+
+#archive .filters #calendar #calendarDays div:hover:not(.disabled, .weekDay), #archive .filters #calendar #calendarDays div.startdate, #archive .filters #calendar #calendarDays div.enddate, .apartmentFilters .calendar .calendarDays div.betweenDates{
+    background-color: #5bb945;
+    color: white;
+}
+
+@media (max-width: 767px){
+    .apartmentFilters .calendar{
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .apartmentFilters .calendar .calendarDays div{
+        height: 35px;
+        width: 35px;
+    }
+}
+
+
+
+
+/*********** Baseline, reset styles ***********/
+#archive .filters input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Removes default focus */
+#archive .filters input[type="range"]:focus {
+    outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+#archive .filters input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+/* slider thumb */
+#archive .filters input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -4px; /* Centers thumb on the track */
+    background-color: #D59F54;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+}
+
+#archive .filters input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid #D59F54;
+    outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+#archive .filters input[type="range"]::-moz-range-track {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+/* slider thumb */
+#archive .filters input[type="range"]::-moz-range-thumb {
+    background-color: #D59F54;
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+}
+
+#archive .filters input[type="range"]:focus::-moz-range-thumb{
+    outline: 3px solid #D59F54;
+    outline-offset: 0.125rem;
+}
+
+
+#archive .filters select{
+    font-family: "Nunito", Sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: var( --e-global-color-accent );
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    padding: 11px 18px 11px 18px;
+}
+
+#archive .filters label.filterLabel{
+    color: var( --e-global-color-text );
+    font-family: "Nunito", Sans-serif;
+    font-size: 18px;
+    text-transform: none;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 40px;
+    letter-spacing: 0px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#archive .filters .filter{
+    padding: 40px 0;
+}
+
+#archive .filters .filter#calendarFilter{
+    padding-top: 0;
+}
+
+#archive .filters .filter:not(:last-child){
+    border-bottom: 1px solid #bbb;
+}
+
+#archive .filters .filter #guestsNumber, #archive .filters .filter #bedroomsNumber{
+    margin-bottom: 5px;
+}
+
+#archive .filters .filter.extras{
+    display: flex;
+    flex-direction: column;
+}
+
+#archive .filters .filter.extras .checkboxes{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#archive .filters .filter.extras .checkboxes span{
+    display: flex;
+    gap: 20px;
+    user-select: none;
+}
+
+#archive .filters .filter.extras .checkboxes span input{
+    display: none;
+}
+
+#archive .filters .filter.extras .checkboxes span .checkbox{
+    border: 2px solid #bbb;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+#archive .filters .filter.extras .checkboxes span input:checked + .checkbox{
+    background-color: #D59F54;
+    border: 2px solid white;
+    outline: 1px solid #D59F54;
+}
+
+#archive .filters .filter:last-child{
+    padding-bottom: 0;
+}
+
+#archive .filters.loading{
+    opacity: 0.5;
+}
+
+#archive .activeFilters{
+    display: none;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#archive .activeFilters>p{
+    width: 100%;
+    font-family: "Nunito", Sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+}
+
+#archive .activeFilter{
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid #D8D8D8;
+    border-radius: 8px;
+    align-items: center;
+}
+
+#archive .activeFilter p{
+    margin: 0;
+    font-family: "Nunito", Sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+
+@media (max-width: 900px){
+    #archive{
+        flex-direction: column;
+    }
+    #archive #apartsments{
+        width: 100%;
+        gap: 35px;
+    }
+    #archive .infoBar{
+        width: 100%;
+        margin-top: 20px;
+    }
+    #archive .activeFilters{
+        display: flex;
+    }
+}
+
+@media (max-width: 400px){
+    #archive #apartsments{
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}

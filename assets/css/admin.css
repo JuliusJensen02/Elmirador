@@ -1,0 +1,43 @@
+#adminmenuwrap #menu-dashboard,
+#adminmenuwrap #menu-posts,
+#adminmenuwrap #menu-media,
+#adminmenuwrap #menu-pages,
+#adminmenuwrap #menu-comments,
+#adminmenuwrap #menu-appearance,
+#adminmenuwrap #menu-plugins,
+#adminmenuwrap #menu-tools,
+#adminmenuwrap #menu-settings,
+#adminmenuwrap #toplevel_page_woocommerce,
+#adminmenuwrap #toplevel_page_wc-admin-path--analytics-overview,
+#adminmenuwrap #toplevel_page_woocommerce-marketing,
+#adminmenuwrap #toplevel_page_elementor,
+#adminmenuwrap #menu-posts-elementor_library,
+#adminmenuwrap #toplevel_page_jet-dashboard,
+#adminmenuwrap .separator-croco--plugins-before,
+#adminmenuwrap #menu-posts-jet-popup,
+#adminmenuwrap #menu-posts-jet-form-builder,
+#adminmenuwrap #toplevel_page_jet-engine,
+#adminmenuwrap #toplevel_page_jet-smart-filters,
+#adminmenuwrap #toplevel_page_jet-abaf-bookings,
+#adminmenuwrap .separator-croco--post-type-before,
+#adminmenuwrap #menu-posts-booking-emails,
+#adminmenuwrap #toplevel_page_easy-wp-smtp,
+#adminmenuwrap .wp-menu-separator,
+#adminmenuwrap #toplevel_page_wpseo_dashboard,
+#adminmenuwrap #toplevel_page_WP-Optimize,
+#adminmenuwrap #toplevel_page_tm-menu-main,
+#wp-admin-bar-root-default #wp-admin-bar-updates,
+#wp-admin-bar-root-default #wp-admin-bar-comments,
+#wp-admin-bar-root-default #wp-admin-bar-new-content,
+#wp-admin-bar-root-default #wp-admin-bar-wpseo-menu,
+#wp-admin-bar-root-default #wp-admin-bar-imagify,
+#wp-admin-bar-root-default #wp-admin-bar-WPML_ALS,
+#wp-admin-bar-root-default #wp-admin-bar-wp-logo,
+#wpfooter,
+#adminmenuwrap #menu-users .wp-submenu li:last-child{
+    display: none !important;
+}
+
+.toplevel_page_jet-cct-ordre .page-title-action {
+    display: none !important;
+}

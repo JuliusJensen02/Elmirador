@@ -1,0 +1,36 @@
+#your-profile h2:nth-child(5),
+#your-profile .form-table:nth-child(6),
+#your-profile .form-table:nth-child(10) tr:not(.user-email-wrap),
+#your-profile .user-description-wrap,
+#your-profile #application-passwords-section,
+#your-profile h3:nth-child(16),
+#your-profile .form-table:nth-child(17),
+#your-profile .yoast-settings,
+#your-profile #e-notes,
+#your-profile .form-table:nth-child(23),
+#your-profile .jet-engine-user-meta-wrap {
+    display: none !important;
+}
+
+#your-profile #booking-table{
+    overflow-x: scroll;
+    padding-bottom: 30px;
+}
+
+
+#your-profile #booking-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #c3c4c7;
+}
+
+#your-profile #booking-table td, #your-profile #booking-table th {
+    text-align: left;
+    white-space: nowrap;
+    padding: 8px 16px;
+}
+
+#your-profile #booking-table tr:nth-child(odd) td {
+    background-color: #f9f9f9;
+}

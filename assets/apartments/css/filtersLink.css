@@ -1,0 +1,599 @@
+.apartmentFiltersContainer{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.apartmentFiltersContainer #apartmentFilterLabelBox{
+    display: flex;
+    background-color: white;
+    border-radius: 40px;
+    padding: 8px 8px 8px 30px;
+    justify-content: space-between;
+    box-shadow: 3px 6px 10px 0 rgba(0,0,0,0.3);
+}
+
+.apartmentFiltersContainer #apartmentFilterLabelBox .icon{
+    display: flex;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    background-color: #D59F54;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.apartmentFiltersContainer #apartmentFilterLabelBox .content{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.apartmentFiltersContainer #apartmentFilterLabelBox .content h3{
+    font-family: "Nunito", Sans-serif;
+    font-size: 15px;
+    color: #1A242F;
+    font-weight: 600;
+    margin: 0;
+}
+
+.apartmentFiltersContainer #apartmentFilterLabelBox .content .info{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.apartmentFiltersContainer #apartmentFilterLabelBox .content .info p{
+    font-family: "Nunito", Sans-serif;
+    font-size: 14px;
+    color: #AFAFAF;
+    font-weight: 600;
+    margin: 0;
+}
+
+.apartmentFiltersContainer #apartmentFilterLabelBox .content .info span{
+    width: 1px;
+    height: 12px;
+    background-color: #AFAFAF;
+    border-radius: 2px;
+}
+
+.apartmentFiltersContainer #apartmentFilters{
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    transition: 0.3s;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 3px 6px 10px 0 rgba(0,0,0,0.3);
+    gap: 20px;
+}
+
+.apartmentFiltersContainer.active #apartmentFilters{
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+}
+
+.apartmentFiltersContainer #apartmentFilters label{
+    font-size: 14px;
+    color: #747474;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.apartmentFiltersContainer #apartmentFilters .filter.calendar{
+    display: flex;
+    flex-direction: column;
+}
+
+.apartmentFiltersContainer #apartmentFilters .filter.calendarFilter .inputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.apartmentFiltersContainer #apartmentFilters .filter.calendar .inputs .input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.apartmentFiltersContainer #apartmentFilters .filter input{
+    padding: 11px 18px;
+    font-weight: 600;
+    background-color: #F6F6F6;
+    border: none;
+    border-radius: 12px;
+    color: #1A242F;
+    font-size: 16px;
+    font-family: "Nunito", Sans-serif;
+    min-width: 100px;
+}
+
+.apartmentFiltersContainer #apartmentFilters .filter.calendar .disclaimer{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #747474;
+    font-family: "Nunito", Sans-serif;
+    font-style: italic;
+}
+
+.apartmentFiltersContainer #apartmentFilters .filter.calendar .clearDates{
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #D59F54;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+.apartmentFiltersContainer #apartmentFilters .filter.calendar .clearDates.active{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+.apartmentFiltersContainer #apartmentFilters .calendar{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #d8d8d8;
+    padding: 0 5px;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar.active{
+    display: flex;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendar-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 12px 6px 12px;
+    font-size: 18px;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendar-controls .currentMonth{
+    text-transform: capitalize;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendar-controls button{
+    background: none;
+    padding: 0;
+    width: 28px;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    border: none;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendar-controls button svg{
+    width: 100%;
+    height: 100%;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendar-controls button.prevMonth{
+    transform: rotate(270deg);
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendar-controls button.nextMonth{
+    transform: rotate(90deg);
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendarDays{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    transition: 0.3s;
+    color: #1A242F;
+    font-family: "Nunito", Sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: not-allowed;
+    user-select: none;
+    background-color: #57a0464d;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div:not(.disabled, .weekDay){
+    cursor: pointer;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div.disabled, .apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div.weekDay{
+    background: none;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div.disabled:not(.initial){
+    color: #fff;
+    background-color: #dd46224d;
+}
+
+.apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div:hover:not(.disabled, .weekDay), .apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div.startdate, .apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div.enddate, .apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div.betweenDates{
+    background-color: #57a046;
+    color: white;
+}
+
+.apartmentFiltersContainer #apartmentFilters .clearDatesBtn{
+    font-size: 14px;
+    color: #D59F54;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 0;
+    text-align: left;
+    margin-top: 15px;
+}
+
+@media (max-width: 767px){
+    .apartmentFiltersContainer #apartmentFilters .calendar{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .apartmentFiltersContainer #apartmentFilters .calendar .calendarDays div{
+        height: 35px;
+        width: 35px;
+    }
+    .apartmentFiltersContainer #apartmentFilters .clearDatesBtn{
+        bottom: 20px;
+    }
+}
+
+/* Chrome, Safari, Edge, Opera */
+.apartmentFiltersContainer #apartmentFilters input::-webkit-outer-spin-button,
+.apartmentFiltersContainer #apartmentFilters input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.apartmentFiltersContainer #apartmentFilters input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.apartmentFiltersContainer #apartmentFilters .searchCtn, .apartmentFiltersContainer #apartmentFilters .filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.apartmentFiltersContainer #apartmentFilters .searchBtn{
+    height: fit-content;
+    border: none;
+    padding: 11px 25px;
+    font-weight: 600;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-family: "Nunito", Sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+.apartmentFiltersContainer #apartmentFilters .searchBtn:hover{
+    background-color: #CA9242;
+}
+
+
+
+
+@media (max-width: 1024px){
+    .apartmentFiltersContainer{
+        position: static;
+        top: unset;
+        left: unset;
+        transform: unset;
+        width: 100%;
+        padding: 0 5%;
+    }
+    .apartmentFiltersContainer #apartmentFilterLabelBox{
+        border: 1px solid #E0E0E0;
+        align-items: center;
+    }
+    .apartmentFiltersContainer.active #apartmentFilterLabelBox{
+        display: none;
+    }
+    .apartmentFiltersContainer #apartmentFilterLabelBox .content .info p{
+        font-size: 13px;
+    }
+    .apartmentFiltersContainer #apartmentFilterLabelBox .content .info{
+        flex-wrap: wrap;
+        row-gap: 0;
+    }
+}
+
+
+
+
+
+
+/*
+.apartmentFilters{
+    display: flex;
+    background-color: white;
+    padding: 35px 50px 60px 50px;
+    border-radius: 16px;
+    gap: 20px;
+}
+
+.apartmentFilters label{
+    font-size: 15px;
+    color: #747474;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.apartmentFilters .filter.calendar{
+    display: flex;
+    flex-direction: column;
+}
+
+.apartmentFilters .filter.calendarFilter .inputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.apartmentFilters .filter.calendar .inputs .input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.apartmentFilters .filter input{
+    padding: 11px 18px;
+    font-weight: 600;
+    background-color: #F6F6F6;
+    border: none;
+    border-radius: 12px;
+    color: #1A242F;
+    font-size: 15px;
+    font-family: "Nunito", Sans-serif;
+    min-width: 100px;
+}
+
+.apartmentFilters .filter.calendar .disclaimer{
+    margin-top: 10px;
+    font-size: 12px;
+    color: #747474;
+    font-family: "Nunito", Sans-serif;
+    font-style: italic;
+}
+
+.apartmentFilters .filter.calendar .clearDates{
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #D59F54;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+.apartmentFilters .filter.calendar .clearDates.active{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+.apartmentFilters .calendar{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #d8d8d8;
+    padding: 0 5px;
+}
+
+.apartmentFilters .calendar.active{
+    display: flex;
+}
+
+.apartmentFilters .calendar .calendar-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 12px 6px 12px;
+    font-size: 18px;
+}
+
+.apartmentFilters .calendar .calendar-controls .currentMonth{
+    text-transform: capitalize;
+}
+
+.apartmentFilters .calendar .calendar-controls button{
+    background: none;
+    padding: 0;
+    width: 28px;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    border: none;
+}
+
+.apartmentFilters .calendar .calendar-controls button svg{
+    width: 100%;
+    height: 100%;
+}
+
+.apartmentFilters .calendar .calendar-controls button.prevMonth{
+    transform: rotate(270deg);
+}
+
+.apartmentFilters .calendar .calendar-controls button.nextMonth{
+    transform: rotate(90deg);
+}
+
+.apartmentFilters .calendar .calendarDays{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+.apartmentFilters .calendar .calendarDays div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    transition: 0.3s;
+    color: #1A242F;
+    font-family: "Nunito", Sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: not-allowed;
+    user-select: none;
+    background-color: #57a0464d;
+}
+
+.apartmentFilters .calendar .calendarDays div:not(.disabled, .weekDay){
+    cursor: pointer;
+}
+
+.apartmentFilters .calendar .calendarDays div.disabled, .apartmentFilters .calendar .calendarDays div.weekDay{
+    background: none;
+}
+
+.apartmentFilters  .calendar .calendarDays div.disabled:not(.initial){
+    color: #fff;
+    background-color: #dd46224d;
+}
+
+.apartmentFilters .calendar .calendarDays div:hover:not(.disabled, .weekDay), .apartmentFilters .calendar .calendarDays div.startdate, .apartmentFilters .calendar .calendarDays div.enddate, .apartmentFilters .calendar .calendarDays div.betweenDates{
+    background-color: #57a046;
+    color: white;
+}
+
+.apartmentFilters .clearDatesBtn{
+    position: absolute;
+    bottom: 25px;
+    font-size: 14px;
+    color: #D59F54;
+    font-family: "Nunito", Sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+@media (max-width: 767px){
+    .apartmentFilters{
+        padding: 25px 20px 55px 20px;
+    }
+    .apartmentFilters .calendarFilter .inputs{
+        gap: 10px !important;
+    }
+    .apartmentFilters{
+        flex-direction: column;
+        align-items: unset !important;
+    }
+    .apartmentFilters .calendar{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .apartmentFilters .calendar .calendarDays div{
+        height: 35px;
+        width: 35px;
+    }
+    .apartmentFilters .clearDatesBtn{
+        bottom: 20px;
+    }
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+/*.apartmentFilters input::-webkit-outer-spin-button,
+.apartmentFilters input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+/*.apartmentFilters input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.apartmentFilters .searchCtn, .apartmentFilters .filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.apartmentFilters .searchBtn{
+    height: fit-content;
+    border: none;
+    padding: 11px 25px;
+    font-weight: 600;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-family: "Nunito", Sans-serif;
+}
