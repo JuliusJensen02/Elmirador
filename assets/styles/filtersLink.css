@@ -36,7 +36,7 @@
 }
 
 .apartmentFiltersContainer #apartmentFilterLabelBox .content h3{
-    font-family: "Nunito", Sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 15px;
     color: #1A242F;
     font-weight: 600;
@@ -50,7 +50,7 @@
 }
 
 .apartmentFiltersContainer #apartmentFilterLabelBox .content .info p{
-    font-family: "Nunito", Sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 14px;
     color: #AFAFAF;
     font-weight: 600;
@@ -86,7 +86,7 @@
 .apartmentFiltersContainer #apartmentFilters label{
     font-size: 14px;
     color: #747474;
-    font-family: "Nunito", Sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: 400;
     margin-bottom: 10px;
 }
@@ -117,7 +117,7 @@
     border-radius: 12px;
     color: #1A242F;
     font-size: 16px;
-    font-family: "Nunito", Sans-serif;
+    font-family: "Nunito", sans-serif;
     min-width: 100px;
 }
 
@@ -125,7 +125,7 @@
     margin-top: 10px;
     font-size: 12px;
     color: #747474;
-    font-family: "Nunito", Sans-serif;
+    font-family: "Nunito", sans-serif;
     font-style: italic;
 }
 
@@ -134,7 +134,7 @@
     margin-top: 10px;
     font-size: 14px;
     color: #D59F54;
-    font-family: "Nunito", Sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: 600;
     cursor: pointer;
     text-decoration: underline;
@@ -223,7 +223,7 @@
     border-radius: 2px;
     transition: 0.3s;
     color: #1A242F;
-    font-family: "Nunito", Sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 12px;
     font-weight: 600;
     cursor: not-allowed;
@@ -252,7 +252,7 @@
 .apartmentFiltersContainer #apartmentFilters .clearDatesBtn{
     font-size: 14px;
     color: #D59F54;
-    font-family: "Nunito", Sans-serif;
+    font-family: "Nunito", sans-serif;
     font-weight: 600;
     cursor: pointer;
     text-decoration: underline;
@@ -306,7 +306,7 @@
     border-radius: 12px;
     color: white;
     font-size: 16px;
-    font-family: "Nunito", Sans-serif;
+    font-family: "Nunito", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;

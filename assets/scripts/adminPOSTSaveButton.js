@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-	waitForElm(".editor-post-publish-button").then((elm) => {
+	waitForElm(".editor-post-publish-button").then(() => {
 		let saveButton = $('.editor-post-publish-button');
 		let customButton = document.createElement('button');
 		customButton.textContent = 'Send mail';
@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
 			saveButton.trigger('click');
 			setTimeout(function(){
 				let timer = setInterval(function(){
-					if(saveButton.text() == "Gem"){
+					if(saveButton.text() === "Gem"){
 						console.log('Opdater');
 						e.preventDefault();
 						let data = {
@@ -27,13 +27,14 @@ jQuery(document).ready(function ($) {
 		saveButton.after(customButton);
 	});
 	/*PDF link*/
-	let pdfLink = $("#invoice").val();
+	let invoice = $("#invoice");
+	let pdfLink = invoice.val();
 	let anchor = document.createElement("a");
 	anchor.href = pdfLink;
 	anchor.textContent = "Åbn faktura";
 	anchor.target = "_blank";
 	document.getElementById("invoice").after(anchor);
-	$("#invoice").hide();
+	invoice.hide();
 
 	/*Kunde link*/
 	let kundeAnchor = document.createElement("a");
@@ -46,14 +47,15 @@ jQuery(document).ready(function ($) {
 	/*Id til locked fields*/
 	let idsForLock = ["hus-id", "ankomst-udtjekning", "pris-i-alt", "nights", "pris-for-leje", "pris-extra-services", "subtotal"];
 	idsForLock.forEach((id) => {
-		let val = $("#"+id).val();
-		if(val == null || val == ""){
+		let element = $("#"+id);
+		let val = element.val();
+		if(val == null || val === ""){
 			val = 0;
 		}
 		let p = document.createElement("p");
 		p.textContent = val;
 		document.getElementById(id).after(p);
-		$("#"+id).hide();
+		element.hide();
 	});
 });
 
@@ -64,7 +66,7 @@ function waitForElm(selector) {
 			return resolve(document.querySelector(selector));
 		}
 
-		const observer = new MutationObserver(mutations => {
+		const observer = new MutationObserver(() => {
 			if (document.querySelector(selector)) {
 				resolve(document.querySelector(selector));
 				observer.disconnect();
