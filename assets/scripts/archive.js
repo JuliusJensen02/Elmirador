@@ -233,7 +233,7 @@ jQuery(document).ready(function ($) {
             apartmentsContainer.innerHTML = "";
             let apartments = response.data;
             if(!Array.isArray(apartments) || apartments.length === 0){
-                if(ajax_object.lang == 'da') {
+                if(ajax_object.lang === 'da') {
                     apartmentsContainer.textContent = "Ingen boliger matcher dine kriterier";
                 }
                 else{
@@ -277,7 +277,7 @@ jQuery(document).ready(function ($) {
 
 
         let details = document.createElement("p");
-        if(apartment.extras != ""){
+        if(apartment.extras !== ""){
             apartment.extras = " ∙ " + apartment.extras
         }
         details.innerHTML = "<span>"+apartment.guests+"</span>" + " ∙ " + "<span>"+apartment.bedrooms+"</span>" + " ∙ " + "<span>"+apartment.beds+"</span>" + " ∙ " + "<span>"+apartment.bathrooms+"</span>" + "<span>"+apartment.extras+"</span>";
@@ -327,10 +327,10 @@ jQuery(document).ready(function ($) {
 
         let galleryNavPrev = document.createElement("button");
         galleryNavPrev.classList.add('prev');
-        galleryNavPrev.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M18 15.5a1 1 0 0 1-.71-.29l-4.58-4.59a1 1 0 0 0-1.42 0l-4.58 4.59a1 1 0 0 1-1.42-1.42l4.59-4.58a3.06 3.06 0 0 1 4.24 0l4.59 4.58a1 1 0 0 1 0 1.42 1 1 0 0 1-.71.29Z" fill="#d59f54" opacity="1" data-original="#000000"/></g></svg>';
+        galleryNavPrev.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve" class=""><g><path d="M18 15.5a1 1 0 0 1-.71-.29l-4.58-4.59a1 1 0 0 0-1.42 0l-4.58 4.59a1 1 0 0 1-1.42-1.42l4.59-4.58a3.06 3.06 0 0 1 4.24 0l4.59 4.58a1 1 0 0 1 0 1.42 1 1 0 0 1-.71.29Z" fill="#d59f54" opacity="1" data-original="#000000"/></g></svg>';
         let galleryNavNext = document.createElement("button");
         galleryNavNext.classList.add('next');
-        galleryNavNext.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M18 15.5a1 1 0 0 1-.71-.29l-4.58-4.59a1 1 0 0 0-1.42 0l-4.58 4.59a1 1 0 0 1-1.42-1.42l4.59-4.58a3.06 3.06 0 0 1 4.24 0l4.59 4.58a1 1 0 0 1 0 1.42 1 1 0 0 1-.71.29Z" fill="#d59f54" opacity="1" data-original="#000000"/></g></svg>';
+        galleryNavNext.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve" class=""><g><path d="M18 15.5a1 1 0 0 1-.71-.29l-4.58-4.59a1 1 0 0 0-1.42 0l-4.58 4.59a1 1 0 0 1-1.42-1.42l4.59-4.58a3.06 3.06 0 0 1 4.24 0l4.59 4.58a1 1 0 0 1 0 1.42 1 1 0 0 1-.71.29Z" fill="#d59f54" opacity="1" data-original="#000000"/></g></svg>';
         galleryNav.append(galleryNavPrev, galleryNavNext);
 
         let galleryPosition = 0;

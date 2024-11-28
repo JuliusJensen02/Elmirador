@@ -253,7 +253,7 @@ if(filter != null) {
     let calendar = new Calendar(calendarInput1, calendarInput2, filter.querySelector('.calendar'), filter);
 
     calendarInput1.addEventListener("change", function(){
-        if(calendarInput1.value != "" && calendarInput2.value != ""){
+        if(calendarInput1.value !== "" && calendarInput2.value !== ""){
             let date1 = calendarInput1.value.replaceAll("-", ".");
             let date2 = calendarInput2.value.replaceAll("-", ".");
             document.getElementById("chosenDates").textContent = date1 + " - " + date2;
@@ -261,7 +261,7 @@ if(filter != null) {
     });
 
     calendarInput2.addEventListener("change", function(){
-        if(calendarInput1.value != "" && calendarInput2.value != ""){
+        if(calendarInput1.value !== "" && calendarInput2.value !== ""){
             let date1 = calendarInput1.value.replaceAll("-", ".");
             let date2 = calendarInput2.value.replaceAll("-", ".");
             document.getElementById("chosenDates").textContent = date1 + " - " + date2;
