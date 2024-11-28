@@ -1,2 +1,3 @@
 /.idea/
 .stylelintrc.json
+/eslint.config.mjs

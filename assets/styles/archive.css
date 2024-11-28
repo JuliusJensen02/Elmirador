@@ -5,7 +5,7 @@
 }
 
 
-/*Listing*/
+/* Listing */
 #archive #apartsments{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
@@ -58,6 +58,11 @@
     border-radius: 0 4px 4px 0;
 }
 
+#archive #apartsments .gallery .gallery-nav button svg{
+    width: 30px;
+    height: 25px;
+}
+
 #archive #apartsments .gallery .gallery-nav button.prev svg{
     transform: rotate(270deg);
 }
@@ -66,13 +71,8 @@
     transform: rotate(90deg);
 }
 
-#archive #apartsments .gallery .gallery-nav button svg{
-    width: 30px;
-    height: 25px;
-}
-
 #archive #apartsments .gallery .gallery-nav button svg path{
-    fill: hsla(0,0%,93.3%,.9)
+    fill: hsl(0deg 0% 93.3% / 90%)
 }
 
 #archive #apartsments .gallery .gallery-slider{
@@ -101,16 +101,16 @@
 
 #archive #apartsments h2 a{
     color: var( --e-global-color-secondary );
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 1;
-    margin: 10px 0 5px 0;
+    margin: 10px 0 5px;
 }
 
 #archive #apartsments p{
     color: #000;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 14px;
     font-weight: 400;
     margin: 0;
@@ -126,7 +126,7 @@
     border-radius: 0;
     background: none;
     color: #747474;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 14px;
     font-weight: 400;
     text-decoration: underline;
@@ -138,7 +138,7 @@
 #archive #apartsments .price{
     font-size: 14px;
     color: #747474;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-weight: 600;
 }
 
@@ -146,26 +146,27 @@
     color: #1A242F;
     font-size: 16px;
     font-weight: 700;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
-@media (max-width: 1024px){
+@media (width <= 1024px){
     #archive #apartsments .gallery .gallery-nav button{
         background-color: #1A242F4D;
         opacity: 1;
     }
+
     #archive{
         gap: 20px;
     }
 }
 
-@media (min-width: 900px) and (max-width: 1024px){
+@media (width >= 900px) and (width <= 1024px){
     #archive{
         margin-top: 100px;
     }
 }
 
-/*Popup*/
+/* Popup */
 #archive #apartsments .popup{
     display: none;
     position: fixed;
@@ -173,7 +174,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(0 0 0 / 50%);
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -264,14 +265,14 @@
     border-bottom: 1px solid #E8E8E8;
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
     #archive #apartsments .popup-content .season, #archive #apartsments .popup-content .discount{
         padding: 15px 30px;
     }
 }
 
 
-/*Sidebar*/
+/* Sidebar */
 
 #archive .infoBar{
     width: 380px;
@@ -292,7 +293,7 @@
 
 #archive .infoBar .bar p{
     margin: 0;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 18px;
     font-weight: 600;
     color: #1A242F;
@@ -305,7 +306,7 @@
 
 #archive .filters .content{
     background-color: #F6F6F6;
-    padding: 30px 40px 40px 40px;
+    padding: 30px 40px 40px;
     border-radius: 12px;
 }
 
@@ -334,7 +335,7 @@
 
 #archive .included.active .content{
     max-height: 800px;
-    padding: 40px 40px;
+    padding: 40px;
 }
 
 #archive .included .content .row{
@@ -361,7 +362,7 @@
 }
 
 
-@media (max-width: 900px){
+@media (width <= 900px){
     #archive .infoBar .filters .bar{
         display: flex;
     }
@@ -386,7 +387,7 @@
 
     #archive .filters.active .content{
         max-height: 1200px;
-        padding: 40px 40px;
+        padding: 40px;
     }
 
     #archive .filters .bar{
@@ -399,7 +400,7 @@
 }
 
 
-/*Calendar*/
+/* Calendar */
 
 #archive .filters .filter.calendar{
     display: flex;
@@ -419,7 +420,7 @@
     gap: 5px;
     font-size: 14px;
     color: #747474;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-weight: 600;
     width: 100%;
 }
@@ -436,7 +437,7 @@
     margin-top: 10px;
     font-size: 12px;
     color: #747474;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-style: italic;
 }
 
@@ -445,7 +446,7 @@
     margin-top: 10px;
     font-size: 14px;
     color: #D59F54;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-weight: 600;
     cursor: pointer;
     text-decoration: underline;
@@ -464,7 +465,7 @@
     display: block;
     font-size: 14px;
     color: #D59F54;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-weight: 600;
     cursor: pointer;
     text-decoration: underline;
@@ -475,7 +476,7 @@
     text-align: left;
 }
 
-@media (max-width: 767px){
+@media (width <= 767px){
     #archive #calendar{
         position: fixed !important;
         left: 50%;
@@ -509,7 +510,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 12px 6px 12px;
+    padding: 16px 12px 6px;
     font-size: 18px;
 }
 
@@ -556,7 +557,7 @@
     border-radius: 2px;
     transition: 0.3s;
     color: #1A242F;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 12px;
     font-weight: 600;
     cursor: not-allowed;
@@ -582,12 +583,13 @@
     color: white;
 }
 
-@media (max-width: 767px){
+@media (width <= 767px){
     .apartmentFilters .calendar{
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
     }
+
     .apartmentFilters .calendar .calendarDays div{
         height: 35px;
         width: 35px;
@@ -599,7 +601,6 @@
 
 /*********** Baseline, reset styles ***********/
 #archive .filters input[type="range"] {
-    -webkit-appearance: none;
     appearance: none;
     background: transparent;
     cursor: pointer;
@@ -612,16 +613,16 @@
 }
 
 /******** Chrome, Safari, Opera and Edge Chromium styles ********/
+
 /* slider track */
 #archive .filters input[type="range"]::-webkit-slider-runnable-track {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 0.5rem;
     height: 0.5rem;
 }
 
 /* slider thumb */
-#archive .filters input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+#archive .filters input[type="range"]::-webkit-slider-thumb { /* Override default look */
     appearance: none;
     margin-top: -4px; /* Centers thumb on the track */
     background-color: #D59F54;
@@ -636,9 +637,10 @@
 }
 
 /*********** Firefox styles ***********/
+
 /* slider track */
 #archive .filters input[type="range"]::-moz-range-track {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 0.5rem;
     height: 0.5rem;
 }
@@ -646,7 +648,7 @@
 /* slider thumb */
 #archive .filters input[type="range"]::-moz-range-thumb {
     background-color: #D59F54;
-    border: none; /*Removes extra border that FF applies*/
+    border: none; /* Removes extra border that FF applies */
     border-radius: 50%;
     height: 16px;
     width: 16px;
@@ -659,20 +661,20 @@
 
 
 #archive .filters select{
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.4em;
     color: var( --e-global-color-accent );
-    background-color: #FFFFFF;
+    background-color: #FFF;
     border: none;
-    border-radius: 4px 4px 4px 4px;
-    padding: 11px 18px 11px 18px;
+    border-radius: 4px;
+    padding: 11px 18px;
 }
 
 #archive .filters label.filterLabel{
     color: var( --e-global-color-text );
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 18px;
     text-transform: none;
     font-style: normal;
@@ -750,7 +752,7 @@
 
 #archive .activeFilters>p{
     width: 100%;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 12px;
     font-weight: 400;
     margin: 0;
@@ -767,31 +769,34 @@
 
 #archive .activeFilter p{
     margin: 0;
-    font-family: "Nunito", sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 12px;
     font-weight: 400;
 }
 
 
 
-@media (max-width: 900px){
+@media (width <= 900px){
     #archive{
         flex-direction: column;
     }
+
     #archive #apartsments{
         width: 100%;
         gap: 35px;
     }
+
     #archive .infoBar{
         width: 100%;
         margin-top: 20px;
     }
+
     #archive .activeFilters{
         display: flex;
     }
 }
 
-@media (max-width: 400px){
+@media (width <= 400px){
     #archive #apartsments{
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
