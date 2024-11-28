@@ -1,8 +1,5 @@
 <?php
 
-use classes\BookingMail;
-use classes\BookingOrder;
-
 define('INC_DIR', get_stylesheet_directory() . '/inc');
 require_once INC_DIR . '/user/user.php';
 
@@ -54,21 +51,21 @@ require_once INC_DIR . '/functions/update-booking-order.php';
 add_action('admin_enqueue_scripts', function() {
 	/* Booking admin scripts */
 	if (get_current_screen()->post_type === 'booking-orders') {
-		wp_enqueue_script('custom-save-button', get_stylesheet_directory_uri() . '/assets/booking/js/adminPOSTSaveButton.js', array('jquery'), null, true);
+		wp_enqueue_script('custom-save-button', get_stylesheet_directory_uri() . '/assets/scripts/adminPOSTSaveButton.js', array('jquery'), null, true);
 	}
 
 	$user = wp_get_current_user();
 	if(isset($_GET["post"])) {
 		$postType = get_post_type($_GET["post"]);
 		if ($user && in_array("booking_manager", $user->roles) && $postType == "booking-orders") {
-			wp_enqueue_style('booking_orders_edit_style', get_stylesheet_directory_uri() . '/assets/css/booking-orders.css');
+			wp_enqueue_style('booking_orders_edit_style', get_stylesheet_directory_uri() . '/assets/styles/booking-orders.css');
 		}
 		if(get_post_type($_GET["post"]) == "booking-orders") {
-			wp_enqueue_script('booking_orders_edit_script', get_stylesheet_directory_uri() . '/assets/js/booking-order.js', array('jquery'), null, true);
+			wp_enqueue_script('booking_orders_edit_script', get_stylesheet_directory_uri() . '/assets/scripts/booking-order.js', array('jquery'), null, true);
 		}
 	}
 	if($user && in_array("booking_manager", $user->roles)) {
-		wp_enqueue_style('admin_general_style', get_stylesheet_directory_uri() . '/assets/css/admin.css');
+		wp_enqueue_style('admin_general_style', get_stylesheet_directory_uri() . '/assets/styles/admin.css' );
 	}
 });
 
@@ -79,18 +76,18 @@ add_action('admin_enqueue_scripts', function() {
 add_action('wp_enqueue_scripts', function(){
 	/* Booking styles */
 	if (is_page(17346)) {
-		wp_enqueue_style('bookingTableStyle', get_stylesheet_directory_uri() . '/assets/booking/css/bookingTable.css');
+		wp_enqueue_style('bookingTableStyle', get_stylesheet_directory_uri() . '/assets/booking/css/bookingTable.css' );
 	}
 
 	/* Apartment styles */
 	if(is_archive() && get_post_type() === "boliger"){
-		wp_enqueue_script('apartmentsArchiveScript', get_stylesheet_directory_uri() . '/assets/apartments/js/archive.js', array('jquery'), null, true);
+		wp_enqueue_script('apartmentsArchiveScript', get_stylesheet_directory_uri() . '/assets/scripts/archive.js', array('jquery'), null, true);
 		wp_localize_script('apartmentsArchiveScript', 'ajax_object', array('ajaxurl' => admin_url('admin-ajax.php'), "lang" => $_GET['lang'] ?? 'da'));
-		wp_enqueue_style('apartmentArchiveStyle', get_stylesheet_directory_uri() . '/assets/apartments/css/archive.css');
+		wp_enqueue_style('apartmentArchiveStyle', get_stylesheet_directory_uri() . '/assets/styles/archive.css' );
 	}
 	else{
-		wp_enqueue_script('apartmentsFilterScript', get_stylesheet_directory_uri() . '/assets/apartments/js/filtersLink.js', array('jquery'), null, true);
+		wp_enqueue_script('apartmentsFilterScript', get_stylesheet_directory_uri() . '/assets/scripts/filtersLink.js', array('jquery'), null, true);
 		wp_localize_script('apartmentsFilterScript', 'ajax_object', array('ajaxurl' => admin_url('admin-ajax.php'), "lang" => $_GET['lang'] ?? 'da'));
-		wp_enqueue_style('apartmentFilterStyle', get_stylesheet_directory_uri() . '/assets/apartments/css/filtersLink.css');
+		wp_enqueue_style('apartmentFilterStyle', get_stylesheet_directory_uri() . '/assets/styles/filtersLink.css' );
 	}
 });

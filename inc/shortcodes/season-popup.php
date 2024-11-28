@@ -6,7 +6,7 @@ add_shortcode( 'apartmentSeasonPopup', 'apartmentSeasonPopup' );
 function apartmentSeasonPopup(): string {
 	wp_enqueue_script('apartmentSeasonPopupScript', get_stylesheet_directory_uri() . '/assets/apartments/js/popup.js', array('jquery'), null, true);
 	wp_localize_script('apartmentSeasonPopupScript', 'ajax_object', array('ajaxurl' => admin_url('admin-ajax.php'), "lang" => $_GET['lang'] ?? 'da'));
-	wp_enqueue_style('apartmentSeasonPopupStyle', get_stylesheet_directory_uri() . '/assets/apartments/css/popup.css');
+	wp_enqueue_style('apartmentSeasonPopupStyle', get_stylesheet_directory_uri() . '/assets/apartments/css/popup.css' );
 	$apartment = new Apartment(get_the_ID());
 	ob_start();
 	?>
