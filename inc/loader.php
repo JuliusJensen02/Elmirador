@@ -51,7 +51,7 @@ require_once INC_DIR . '/functions/update-booking-order.php';
 add_action('admin_enqueue_scripts', function() {
 	/* Booking admin scripts */
 	if (get_current_screen()->post_type === 'booking-orders') {
-		wp_enqueue_script('custom-save-button', get_stylesheet_directory_uri() . '/assets/scripts/adminPOSTSaveButton.js', array('jquery'), null, true);
+		wp_enqueue_script('custom-save-button', get_stylesheet_directory_uri() . '/assets/scripts/admin-post-save-button.js', array('jquery'), null, true);
 	}
 
 	$user = wp_get_current_user();
@@ -76,7 +76,7 @@ add_action('admin_enqueue_scripts', function() {
 add_action('wp_enqueue_scripts', function(){
 	/* Booking styles */
 	if (is_page(17346)) {
-		wp_enqueue_style('bookingTableStyle', get_stylesheet_directory_uri() . '/assets/booking/css/bookingTable.css' );
+		wp_enqueue_style('bookingTableStyle', get_stylesheet_directory_uri() . '/assets/booking/css/booking-table.css' );
 	}
 
 	/* Apartment styles */
@@ -86,8 +86,8 @@ add_action('wp_enqueue_scripts', function(){
 		wp_enqueue_style('apartmentArchiveStyle', get_stylesheet_directory_uri() . '/assets/styles/archive.css' );
 	}
 	else{
-		wp_enqueue_script('apartmentsFilterScript', get_stylesheet_directory_uri() . '/assets/scripts/filtersLink.js', array('jquery'), null, true);
+		wp_enqueue_script('apartmentsFilterScript', get_stylesheet_directory_uri() . '/assets/scripts/filters-link.js', array('jquery'), null, true);
 		wp_localize_script('apartmentsFilterScript', 'ajax_object', array('ajaxurl' => admin_url('admin-ajax.php'), "lang" => $_GET['lang'] ?? 'da'));
-		wp_enqueue_style('apartmentFilterStyle', get_stylesheet_directory_uri() . '/assets/styles/filtersLink.css' );
+		wp_enqueue_style('apartmentFilterStyle', get_stylesheet_directory_uri() . '/assets/styles/filters-link.css' );
 	}
 });
