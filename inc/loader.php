@@ -76,7 +76,7 @@ add_action('admin_enqueue_scripts', function() {
 add_action('wp_enqueue_scripts', function(){
 	/* Booking styles */
 	if (is_page(17346)) {
-		wp_enqueue_style('bookingTableStyle', get_stylesheet_directory_uri() . '/assets/booking/css/booking-table.css' );
+		wp_enqueue_style('bookingTableStyle', get_stylesheet_directory_uri() . '/assets/styles/booking-table.css' );
 	}
 
 	/* Apartment styles */
