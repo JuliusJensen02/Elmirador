@@ -17,11 +17,14 @@ jQuery(document).ready(function ($) {
     }
 
     function getBookings(data) {
+        /**
+         * @param ajax_object.ajaxurl {object}
+         */
         return $.post(ajax_object.ajaxurl, data, function (response) {
             bookingContainer.innerHTML = "";
             let apartments = response.data;
             if(apartments.length === 0){
-                bookingContainer.innerHTML = "No bookings found";
+                bookingContainer.innerHTML = "Ingen bookings fundet";
                 return;
             }
             else if(apartments.length > 1){
