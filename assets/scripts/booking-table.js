@@ -63,7 +63,7 @@ jQuery(document).ready(function ($) {
          */
         for (const booking of apartment.bookings) {
             table.append(
-                createBookingElm('house', booking.number, true),
+                createBookingElm('house', booking.number, odd),
                 createBookingElm('bookingDate', booking.dates, odd),
                 createBookingElm('status', booking.status, odd),
                 createBookingElm('total', booking.price, odd),
