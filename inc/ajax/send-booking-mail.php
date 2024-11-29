@@ -1,7 +1,7 @@
 <?php
 
-use booking\classes\BookingMail;
-use booking\classes\BookingOrder;
+use classes\BookingMail;
+use classes\BookingOrder;
 
 function send_booking_mail() {
     $data = sanitize_text_field($_POST['postID']);

@@ -238,4 +238,45 @@ class Apartment {
 	public function getBookedDates(): array {
 		return $this->bookedDates;
 	}
+
+	/**
+	 * @return BookingOrder[]
+	 */
+	public function getBookings(): array {
+		global $wpdb;
+		$bookings = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}jet_apartment_bookings where apartment_id = $this->id" );
+		$bookingOrders = [];
+		foreach ($bookings as $booking) {
+			$bookingOrders[] = new BookingOrder($booking->order_id);
+		}
+		return $bookingOrders;
+	}
+
+	/**
+	 * @return BookingOrder[]
+	 */
+	public function getBookingsSortedByStartDate(): array {
+		$bookings = $this->getBookings();
+		usort($bookings, function($a, $b) {
+			return $this->compareByDateTime($a->getStartDate(), $b->getStartDate());
+		});
+		return $bookings;
+	}
+
+	/**
+	 * @param DateTime $time1
+	 * @param DateTime $time2
+	 * @return int
+	 */
+	private function compareByDateTime(DateTime $time1, DateTime $time2): int {
+		if ( $time1->getTimestamp() > $time2->getTimestamp() ) {
+			return 1;
+		}
+
+		if ( $time1->getTimestamp() < $time2->getTimestamp() ) {
+			return -1;
+		}
+
+		return 0;
+	}
 }

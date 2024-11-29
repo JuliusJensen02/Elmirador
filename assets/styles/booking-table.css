@@ -1,13 +1,13 @@
+#booking-container.multiple .apartmentTable{
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #747474;
+}
+
 .apartmentTable{
     display: grid;
     grid-template-columns: 60px 2fr 1fr 1fr 1fr 1fr;
     overflow-x: scroll;
-}
-
-.apartmentTable.multiple{
-    margin-bottom: 50px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #747474;
 }
 
 .apartmentTable>div{

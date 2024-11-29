@@ -33,6 +33,7 @@ require_once INC_DIR . '/shortcodes/thank-you-booking.php';
  */
 
 require_once INC_DIR . '/ajax/get-apartments.php';
+require_once INC_DIR . '/ajax/get-bookings.php';
 require_once INC_DIR . '/ajax/send-booking-mail.php';
 
 /*
@@ -77,6 +78,8 @@ add_action('wp_enqueue_scripts', function(){
 	/* Booking styles */
 	if (is_page(17346)) {
 		wp_enqueue_style('bookingTableStyle', get_stylesheet_directory_uri() . '/assets/styles/booking-table.css' );
+		wp_enqueue_script('bookingTableScript', get_stylesheet_directory_uri() . '/assets/scripts/booking-table.js', array('jquery'), null, true);
+		wp_localize_script('bookingTableScript', 'ajax_object', array('ajaxurl' => admin_url('admin-ajax.php')));
 	}
 
 	/* Apartment styles */

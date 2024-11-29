@@ -1,8 +1,7 @@
 <?php
 
-use apartments\classes\Apartment;
+use classes\Apartment;
 
-require_once INC_DIR . '/apartments/classes/Apartment.php';
 function get_apartments_custom() {
 	$startDate =    !empty($_POST['startDate']) ? $_POST['startDate'] : false;
 	$endDate =      !empty($_POST['endDate']) ? $_POST['endDate'] : false;

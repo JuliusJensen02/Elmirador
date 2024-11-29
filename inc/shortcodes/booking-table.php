@@ -21,7 +21,8 @@ function compareByDateTime(DateTime $time1, DateTime $time2): int {
 
 add_shortcode('bookingTable', 'bookingTable');
 function bookingTable(): void {
-    global $wpdb;
+	echo "<div id='booking-container'></div>";
+    /*global $wpdb;
     $apartments = get_user_meta(get_current_user_id(), 'boliger', true);
     $apartmentsArray = array();
     foreach ($apartments as $apartment) {
@@ -54,7 +55,7 @@ function bookingTable(): void {
         /**
          * @var $order BookingOrder
          */
-        foreach ($apartment["bookings"] as $bookingOrder) {
+        /*foreach ($apartment["bookings"] as $bookingOrder) {
             $order = $bookingOrder["order"];
             $odd = !$odd;
             $total += $order->getBookingPriceForBookingTable();
@@ -90,5 +91,5 @@ function bookingTable(): void {
         $totalShare = number_format($totalShare, 2, ',', '.');
         echo "<div class='footerElm'><div>Antal bookings: $numberOfBookings</div><div>Total: € $total</div><div>Total omsætning: € $totalShare</div></div>";
         echo "</div>";
-    }
+    }*/
 }
