@@ -109,7 +109,7 @@ jQuery(document).ready(function ($) {
         footer.append(
             createFooterElement('Antal bookings: ' + numberOfBookings),
             createFooterElement('Total: € ' + total),
-            createFooterElement('Total omsætning: € ' + total)
+            createFooterElement('Total omsætning: € ' + totalShare)
         );
         return footer;
     }
